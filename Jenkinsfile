@@ -25,25 +25,25 @@ pipeline {
 				echo "BUILD_URL - $env.BUILD_URL"
 			}
 		}
-		stage('Compile') {
+		stage('Compile1') {
 			steps {
 				sh "mvn clean compile"
 			}
 		}
 
-		stage('Test') {
+		stage('Test1') {
 			steps {
 				sh "mvn test"
 			}
 		}
 
-		stage('Integration Test') {
+		stage('Integration Test1') {
 			steps {
 				sh "mvn failsafe:integration-test failsafe:verify"
 			}
 		}
 
-		stage('Package') {
+		stage('Package1') {
 			steps {
 				sh "mvn package -DskipTests"
 			}
